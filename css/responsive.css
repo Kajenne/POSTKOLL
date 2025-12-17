@@ -1,0 +1,8 @@
+/* Responsive styling */
+
+@media (max-width:520px){
+  .time-card{min-width:100px;padding:8px}
+  .day-buttons{gap:6px}
+  .site-header{padding:12px}
+  .container{margin:18px auto}
+}

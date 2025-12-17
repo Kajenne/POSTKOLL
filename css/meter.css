@@ -1,0 +1,55 @@
+/* Time card och meter visualization */
+
+@keyframes stackBuild{0%{height:0;opacity:0}100%{height:12px;opacity:1}}
+
+.time-card{
+  background:#f5f8ff;
+  border-radius:8px;
+  padding:10px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-width:160px;
+}
+
+.time-label{font-weight:600;color:#07326a;font-size:1.1rem}
+
+.meter{display:flex;gap:4px;align-items:center}
+
+.meter-segment{
+  flex:1;
+  height:12px;
+  border-radius:4px;
+  background:rgba(11,92,255,0.08);
+  transition:background-color .12s ease,height .15s ease;
+  animation:stackBuild 0.6s ease-out forwards;
+  cursor:pointer;
+}
+
+.meter-segment:hover{height:16px}
+
+.meter-hours{
+  font-size:0.95rem;
+  margin-top:4px;
+  display:flex;
+  justify-content:space-between;
+  color:var(--heading-light);
+}
+
+.meter-tooltip{
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  background:rgba(0,0,0,0.85);
+  color:#fff;
+  padding:6px 8px;
+  border-radius:6px;
+  font-size:0.85rem;
+  box-shadow:0 6px 20px rgba(2,6,23,0.25);
+  transform:translate(-50%, -120%);
+  white-space:nowrap;
+  opacity:0;
+  transition:opacity .12s ease;
+}
+
+.meter-tooltip.visible{opacity:1}

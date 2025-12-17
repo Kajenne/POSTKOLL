@@ -1,0 +1,47 @@
+/* Openings log styling */
+
+.openings{
+  margin-top:18px;
+  background:var(--card);
+  padding:20px;
+  padding-bottom:20px;
+  border-radius:20px;
+  border:1px solid #e6eefc;
+}
+
+.openings h2{}
+
+.openings-actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:8px;
+}
+
+.openings-list{
+  list-style:none;
+  padding-top:10px;
+  padding-bottom:0px;
+  padding-right:0px;
+  padding-left:0px;
+  margin:10px 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.opening-item{
+  background:#fff;
+  border:1px solid #e6eefc;
+  padding-left:24px;
+  padding-right:10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-radius:100px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.opening-time{font-weight:600;color:#07326a}
+.opening-meta{font-size:0.95rem;font-weight:600;color:var(--heading-light)}

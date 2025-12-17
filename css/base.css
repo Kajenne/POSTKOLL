@@ -1,0 +1,31 @@
+/* CSS Variables och base styles */
+
+:root{
+  --accent:#0b5cff;
+  --bg:#f7f9ff;
+  --card:#ffffff;
+  --muted:#666;
+  --heading-dark:#07326a;
+  --heading-light:rgba(7,50,106,0.6);
+}
+
+*{box-sizing:border-box}
+
+body{
+  font-family:Inter,Segoe UI,Roboto,system-ui,Arial;
+  line-height:1.4;
+  margin:0;
+  background:var(--bg);
+  color:#111;
+}
+
+/* Text styles */
+.text-large-title{font-size:1.5rem;font-weight:700;color:var(--heading-dark)}
+.text-button{font-size:0.95rem;font-weight:600;letter-spacing:0.3px}
+.text-headline{font-size:1.15rem;font-weight:700;color:var(--heading-dark)}
+.text-subheadline{font-size:0.95rem;font-weight:600;color:var(--heading-light)}
+
+h2{font-size:1.5rem;font-weight:700;color:var(--heading-dark);margin-bottom:20px;margin-top:0}
+
+.note{color:var(--muted);font-size:0.95rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

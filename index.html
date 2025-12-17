@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Postkoll — När kommer breven?</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="css/meter.css">
+  <link rel="stylesheet" href="css/openings.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+<script src="js/schedule.js" defer></script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo" aria-hidden="false">
+      <!-- Logotyp (lätt att byta genom att ersätta images/logo.svg) -->
+      <img src="images/logo.svg" width="48" height="48" alt="Postkoll logo">
+    </div>
+    <div class="title-wrap">
+      <h1>Postkoll</h1>
+    
+    </div>
+  
+   
+
+  </header>
+
+  <main class="container">
+    <section class="selector">
+      <label for="days" class="sr-only">Välj dag</label>
+      <div class="day-buttons" role="tablist" aria-label="Välj veckodag">
+        <button data-day="måndag" role="tab">Måndag</button>
+        <button data-day="tisdag" role="tab">Tisdag</button>
+        <button data-day="onsdag" role="tab">Onsdag</button>
+        <button data-day="torsdag" role="tab">Torsdag</button>
+        <button data-day="fredag" role="tab">Fredag</button>
+        
+      </div>
+    </section>
+
+    <section class="schedule" aria-live="polite">
+      <h2 id="selected-day-display" class="selected-day-display"></h2>
+      <div class="chart-container">
+        <canvas id="scheduleChart"></canvas>
+      </div>
+   
+      <p id="note" class="note"></p>
+    </section>
+
+    
+  </main>
+
+  <!-- Inloggningsmodal -->
+  <div class="modal" id="login-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Stäng">✕</button>
+      <h3>Logga in</h3>
+      <form id="login-form">
+        <label for="login-email">E-post</label>
+        <input id="login-email" name="email" type="email" required autocomplete="email" />
+
+        <div id="code-section" style="display:none;">
+          <label for="login-code">Verifieringskod</label>
+          <input id="login-code" name="code" type="text" maxlength="6" placeholder="000000" autocomplete="one-time-code" />
+          <p class="note" style="margin-top:4px;">Kolla din e-post för verifieringskoden</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="login-submit" id="login-submit-btn">Skicka kod</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Skapa konto-modal -->
+  <div class="modal" id="register-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Stäng">✕</button>
+      <h3>Skapa konto</h3>
+      <form id="register-form">
+        <label for="register-email">E-post</label>
+        <input id="register-email" name="email" type="email" required autocomplete="email" placeholder="din@email.se" />
+
+        <label for="register-username">Namn</label>
+        <input id="register-username" name="username" type="text" required autocomplete="username" />
+
+        <div class="form-actions">
+          <button type="submit" class="login-submit">Skapa konto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <script src="js/auth.js"></script>
+  <script src="js/meter.js"></script>
+  <script src="js/openings.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

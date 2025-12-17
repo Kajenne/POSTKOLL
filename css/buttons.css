@@ -1,0 +1,34 @@
+/* Buttons styling */
+
+.login-btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:12px 16px;
+  border-radius:100px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.login-btn:hover{filter:brightness(0.95)}
+
+.secondary-btn{
+  background:#eef3ff;
+  color:#07326a;
+  border:none;
+  padding:12px 14px;
+  border-radius:100px;
+  cursor:pointer;
+  border:1px solid #d8e4ff;
+}
+
+.secondary-btn:hover{filter:brightness(0.98)}
+
+.login-submit{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}

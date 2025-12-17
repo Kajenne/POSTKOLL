@@ -1,0 +1,71 @@
+/* =========================
+   Schedule section styling
+   ========================= */
+
+.container {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.day-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.day-buttons button {
+  background: transparent;
+  border: 1px solid #d7e6ff;
+  padding: 12px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  color: #07326a;
+}
+
+.day-buttons button:hover {
+  background: #eaf2ff;
+}
+
+.day-buttons button[aria-selected="true"],
+.day-buttons button.selected {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* =========================
+   Schedule card
+   ========================= */
+
+.schedule {
+  margin-top: 18px;
+  background: var(--card);
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid #e6eefc;
+}
+
+.selected-day-display {
+  margin: 0 0 16px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #07326a;
+  text-align: left;
+}
+
+/* =========================
+   Chart layout (VIKTIGT)
+   ========================= */
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 400px;   /* lagom höjd – ändra vid behov */
+}
+
+#scheduleChart {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
